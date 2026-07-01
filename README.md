@@ -1,11 +1,7 @@
 # AnimAkira
 
-Um catálogo simples, bonito e funcional de animes feito com HTML, Tailwind CSS e JavaScript.
-
-![Projeto-AnimAkira](https://raw.githubusercontent.com/Rlldoneto/Projeto-AnimAkira/main/assets/logo.png)
-
 <p align="center">
-  <strong>Um catálogo moderno e funcional de animes</strong>
+  <strong>Um catálogo simples, bonito e funcional de animes feito com HTML, Tailwind CSS e JavaScript.</strong>
 </p>
 
 ## ✨ Funcionalidades
