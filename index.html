@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimAkira - Catálogo de Animes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-200 min-h-screen">
+    
+    <!-- navegacao -->
+    <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="text-3xl">🎌</span>
+                <h1 class="text-3xl font-bold tracking-tighter">AnimAkira</h1>
+            </div>
+            
+            <div class="flex items-center gap-8 text-sm">
+                <a href="#" onclick="loadAnimes()" class="hover:text-yellow-400 transition-colors">Populares</a>
+                <a href="#" onclick="showRandom()" class="hover:text-yellow-400 transition-colors">Aleatório</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Gêneros</a>
+            </div>
+
+            <!-- parte da busca -->
+            <div class="flex gap-3">
+                <input id="search" 
+                       type="search" 
+                       placeholder="Buscar anime..." 
+                       aria-label="Buscar anime"
+                       class="bg-zinc-900 border border-zinc-700 rounded-2xl px-5 py-3 w-72 focus:outline-none focus:border-yellow-500 text-sm">
+                <button onclick="searchAnime()" 
+                        aria-label="Buscar"
+                        class="bg-yellow-500 hover:bg-yellow-400 text-zinc-950 px-5 rounded-2xl font-medium">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <section>
+            <div class="flex justify-between items-baseline mb-8">
+                <h2 id="section-title" class="text-3xl font-semibold tracking-tight">Animes Populares</h2>
+                <span id="result-count" class="text-zinc-500 text-sm"></span>
+            </div>
+
+            <div id="anime-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+                <!-- Cards via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- molde dos quadradinhos quando clica pra ver o anime  -->
+    <dialog id="modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50 m-0 w-full h-full max-w-none">
+        <div class="bg-zinc-900 rounded-3xl max-w-md w-full overflow-hidden">
+            <div id="modal-img" class="h-64 bg-cover bg-center"></div>
+            
+            <div class="p-6">
+                <h3 id="modal-title" class="text-2xl font-bold mb-2"></h3>
+                <div id="modal-info" class="text-sm text-zinc-400 mb-5"></div>
+                <p id="modal-synopsis" class="text-zinc-300 text-sm leading-relaxed max-h-64 overflow-auto"></p>
+                
+                <button onclick="closeModal()" 
+                        class="mt-6 w-full py-3.5 bg-zinc-800 hover:bg-zinc-700 rounded-2xl text-sm font-medium transition-colors">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
